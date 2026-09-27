@@ -1,0 +1,7 @@
+const r=[[0,100],[.2,98],[.3,92],[.4,85],[.5,75],[.65,55],[.8,35],[1,10]];function f(t){if(t==null||Number.isNaN(Number(t)))return null;const e=Math.max(0,Number(t));if(e<=r[0][0])return r[0][1];const n=r[r.length-1];if(e>=n[0])return Math.max(0,n[1]);for(let a=0;a<r.length-1;a++){const[l,s]=r[a],[u,o]=r[a+1];if(e<=u){const x=(e-l)/(u-l);return Math.max(0,Math.min(100,Math.round(s+x*(o-s))))}}return 0}function i(t){return t==null?"inline-flex rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-semibold text-gray-600 dark:bg-gray-700 dark:text-gray-300":t>=90?"inline-flex rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-semibold text-green-800 dark:bg-green-900/50 dark:text-green-200":t>=75?"inline-flex rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-800 dark:bg-amber-900/50 dark:text-amber-200":"inline-flex rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-semibold text-red-800 dark:bg-red-900/50 dark:text-red-200"}function d(t){return t==null?"—":`${t}% cocok`}function c(t,e=74){return t!=null&&t>=e}function g(t,e,n){const a=i(n),l=n!=null?d(n):"—",s=e!=null?`<span class="text-[11px] text-gray-400 dark:text-gray-500">(jarak ${Number(e).toFixed(4)})</span>`:"";return`
+        <div class="flex flex-wrap items-center gap-2">
+            <span class="text-gray-600 dark:text-gray-300">${t}:</span>
+            <span class="${a}">${l}</span>
+            ${s}
+        </div>
+    `}export{d as a,i as b,f as d,g as f,c as m};

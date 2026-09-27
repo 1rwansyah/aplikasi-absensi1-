@@ -1,0 +1,245 @@
+/* --------------------------------------------------------------------------
+   Attendance CKEditor — layout (light & dark)
+   Dark theme: CSS variables on html.dark + targeted overrides.
+   Floating UI (dropdowns, link balloon) inherits from <html class="dark">.
+   -------------------------------------------------------------------------- */
+
+.ckeditor-container .ck-editor__editable {
+    min-height: 120px;
+}
+
+.ckeditor-container .ck.ck-editor {
+    width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode palette (Tailwind gray-900 / 800 / 700 / 200)
+   -------------------------------------------------------------------------- */
+
+html.dark {
+    --ck-attendance-bg: 17, 24, 39;
+    --ck-attendance-card: 31, 41, 55;
+    --ck-attendance-border: 55, 65, 81;
+    --ck-attendance-text: 229, 231, 235;
+    --ck-attendance-muted: 156, 163, 175;
+    --ck-attendance-hover: 55, 65, 81;
+    --ck-attendance-active: 75, 85, 99;
+    --ck-attendance-focus: 239, 68, 68;
+
+    /* Base */
+    --ck-color-base-foreground: rgb(var(--ck-attendance-card));
+    --ck-color-base-background: rgb(var(--ck-attendance-card));
+    --ck-color-base-border: rgb(var(--ck-attendance-border));
+    --ck-color-base-text: rgb(var(--ck-attendance-text));
+    --ck-color-text: rgb(var(--ck-attendance-text));
+    --ck-color-base-focus: rgb(var(--ck-attendance-focus));
+    --ck-color-base-active: rgb(var(--ck-attendance-active));
+    --ck-color-base-active-focus: rgb(var(--ck-attendance-focus));
+    --ck-color-focus-border-coordinates: 0, 84%, 60%;
+    --ck-color-focus-outer-shadow: rgba(var(--ck-attendance-focus), 0.25);
+    --ck-color-focus-disabled-shadow: rgba(var(--ck-attendance-focus), 0.15);
+    --ck-color-shadow-drop: rgba(0, 0, 0, 0.35);
+    --ck-color-shadow-drop-active: rgba(0, 0, 0, 0.45);
+    --ck-color-shadow-inner: rgba(0, 0, 0, 0.2);
+
+    /* Toolbar */
+    --ck-color-toolbar-background: rgb(var(--ck-attendance-card));
+    --ck-color-toolbar-border: rgb(var(--ck-attendance-border));
+
+    /* Buttons */
+    --ck-color-button-default-background: transparent;
+    --ck-color-button-default-hover-background: rgb(var(--ck-attendance-hover));
+    --ck-color-button-default-active-background: rgb(var(--ck-attendance-active));
+    --ck-color-button-default-disabled-background: transparent;
+    --ck-color-button-on-background: rgb(var(--ck-attendance-hover));
+    --ck-color-button-on-hover-background: rgb(var(--ck-attendance-active));
+    --ck-color-button-on-active-background: rgb(var(--ck-attendance-active));
+    --ck-color-button-on-color: rgb(var(--ck-attendance-text));
+    --ck-color-button-on-disabled-background: rgb(var(--ck-attendance-hover));
+    --ck-color-split-button-hover-background: rgb(var(--ck-attendance-hover));
+    --ck-color-split-button-hover-border: rgb(var(--ck-attendance-border));
+
+    /* Dropdowns & lists */
+    --ck-color-dropdown-panel-background: rgb(var(--ck-attendance-card));
+    --ck-color-dropdown-panel-border: rgb(var(--ck-attendance-border));
+    --ck-color-list-background: rgb(var(--ck-attendance-card));
+    --ck-color-list-button-hover-background: rgb(var(--ck-attendance-hover));
+    --ck-color-list-button-on-background: rgb(var(--ck-attendance-hover));
+    --ck-color-list-button-on-background-focus: rgb(var(--ck-attendance-active));
+    --ck-color-list-button-on-text: rgb(var(--ck-attendance-text));
+
+    /* Panels & balloons (link popup, context menu) */
+    --ck-color-panel-background: rgb(var(--ck-attendance-card));
+    --ck-color-panel-border: rgb(var(--ck-attendance-border));
+    --ck-color-dialog-background: rgb(var(--ck-attendance-card));
+    --ck-color-dialog-form-header-border: rgb(var(--ck-attendance-border));
+
+    /* Inputs & labels */
+    --ck-color-input-background: rgb(var(--ck-attendance-bg));
+    --ck-color-input-border: rgb(var(--ck-attendance-border));
+    --ck-color-input-text: rgb(var(--ck-attendance-text));
+    --ck-color-input-disabled-background: rgb(var(--ck-attendance-hover));
+    --ck-color-input-disabled-border: rgb(var(--ck-attendance-border));
+    --ck-color-input-disabled-text: rgb(var(--ck-attendance-muted));
+    --ck-color-labeled-field-label-background: rgb(var(--ck-attendance-card));
+
+    /* Editor */
+    --ck-color-editable-blur-selection: rgba(var(--ck-attendance-focus), 0.2);
+    --ck-color-engine-placeholder-text: rgb(var(--ck-attendance-muted));
+    --ck-color-widget-editable-focus-background: rgb(var(--ck-attendance-bg));
+
+    /* Links inside editor */
+    --ck-color-link-default: rgb(96, 165, 250);
+    --ck-color-link-selected-background: rgba(96, 165, 250, 0.25);
+
+    /* Tooltip */
+    --ck-color-tooltip-background: rgb(var(--ck-attendance-card));
+    --ck-color-tooltip-text: rgb(var(--ck-attendance-text));
+}
+
+/* Editor shell */
+html.dark .ckeditor-container .ck.ck-editor {
+    border-color: rgb(var(--ck-attendance-border));
+}
+
+html.dark .ckeditor-container .ck.ck-editor__main > .ck-editor__editable:not(.ck-editor__nested-editable) {
+    background-color: rgb(var(--ck-attendance-bg));
+    color: rgb(var(--ck-attendance-text));
+    border-color: rgb(var(--ck-attendance-border));
+}
+
+html.dark .ckeditor-container .ck.ck-editor__editable:not(.ck-editor__nested-editable).ck-focused {
+    border-color: rgb(var(--ck-attendance-focus));
+    box-shadow: 0 0 0 1px rgb(var(--ck-attendance-focus));
+}
+
+/* Toolbar */
+html.dark .ckeditor-container .ck.ck-toolbar,
+html.dark .ck.ck-toolbar {
+    background: rgb(var(--ck-attendance-card));
+    border-color: rgb(var(--ck-attendance-border));
+}
+
+/* Toolbar buttons & icons */
+html.dark .ckeditor-container .ck.ck-button,
+html.dark .ck.ck-toolbar .ck.ck-button {
+    color: rgb(var(--ck-attendance-text));
+}
+
+html.dark .ck.ck-icon,
+html.dark .ck.ck-button .ck-icon {
+    color: rgb(var(--ck-attendance-text));
+}
+
+html.dark .ck.ck-button.ck-disabled .ck-icon {
+    color: rgb(var(--ck-attendance-muted));
+}
+
+html.dark .ckeditor-container .ck.ck-button:not(.ck-disabled):hover,
+html.dark .ck.ck-toolbar .ck.ck-button:not(.ck-disabled):hover {
+    background: rgb(var(--ck-attendance-hover));
+}
+
+html.dark .ckeditor-container .ck.ck-button.ck-on,
+html.dark .ck.ck-toolbar .ck.ck-button.ck-on {
+    background: rgb(var(--ck-attendance-hover));
+    color: rgb(var(--ck-attendance-text));
+}
+
+html.dark .ckeditor-container .ck.ck-button.ck-disabled,
+html.dark .ck.ck-toolbar .ck.ck-button.ck-disabled {
+    color: rgb(var(--ck-attendance-muted));
+    opacity: 0.55;
+}
+
+/* Dropdown triggers & panels */
+html.dark .ckeditor-container .ck.ck-dropdown,
+html.dark .ck.ck-dropdown {
+    color: rgb(var(--ck-attendance-text));
+}
+
+html.dark .ck.ck-dropdown__panel {
+    background: rgb(var(--ck-attendance-card));
+    border-color: rgb(var(--ck-attendance-border));
+}
+
+html.dark .ck.ck-list {
+    background: rgb(var(--ck-attendance-card));
+}
+
+html.dark .ck.ck-list__item .ck-button {
+    color: rgb(var(--ck-attendance-text));
+}
+
+html.dark .ck.ck-list__item .ck-button:hover:not(.ck-disabled) {
+    background: rgb(var(--ck-attendance-hover));
+}
+
+html.dark .ck.ck-list__item .ck-button.ck-on {
+    background: rgb(var(--ck-attendance-hover));
+    color: rgb(var(--ck-attendance-text));
+}
+
+/* Balloon panels (link form, context menu) */
+html.dark .ck.ck-balloon-panel {
+    background: rgb(var(--ck-attendance-card));
+    border-color: rgb(var(--ck-attendance-border));
+    color: rgb(var(--ck-attendance-text));
+}
+
+html.dark .ck.ck-balloon-panel .ck.ck-toolbar {
+    background: rgb(var(--ck-attendance-card));
+}
+
+/* Form fields in link popup */
+html.dark .ck.ck-input,
+html.dark .ck.ck-input-text {
+    background: rgb(var(--ck-attendance-bg));
+    border-color: rgb(var(--ck-attendance-border));
+    color: rgb(var(--ck-attendance-text));
+}
+
+html.dark .ck.ck-input:focus,
+html.dark .ck.ck-input-text:focus {
+    border-color: rgb(var(--ck-attendance-focus));
+    box-shadow: 0 0 0 1px rgb(var(--ck-attendance-focus));
+}
+
+html.dark .ck.ck-input::placeholder,
+html.dark .ck.ck-input-text::placeholder {
+    color: rgb(var(--ck-attendance-muted));
+}
+
+html.dark .ck.ck-label,
+html.dark .ck.ck-labeled-field-view > .ck.ck-label {
+    color: rgb(var(--ck-attendance-text));
+}
+
+/* Content area typography */
+html.dark .ckeditor-container .ck-content.ck-editor__editable {
+    color: rgb(var(--ck-attendance-text));
+}
+
+html.dark .ckeditor-container .ck-content.ck-editor__editable a {
+    color: rgb(96, 165, 250);
+}
+
+html.dark .ckeditor-container .ck-content.ck-editor__editable blockquote {
+    border-left-color: rgb(var(--ck-attendance-border));
+    color: rgb(var(--ck-attendance-muted));
+}
+
+html.dark .ckeditor-container .ck-content.ck-editor__editable ul,
+html.dark .ckeditor-container .ck-content.ck-editor__editable ol {
+    color: rgb(var(--ck-attendance-text));
+}
+
+/* Placeholder */
+html.dark .ckeditor-container .ck.ck-editor__editable > .ck-placeholder::before {
+    color: rgb(var(--ck-attendance-muted));
+}
+
+/* Separator in toolbar */
+html.dark .ckeditor-container .ck.ck-toolbar .ck-toolbar__separator {
+    background: rgb(var(--ck-attendance-border));
+}

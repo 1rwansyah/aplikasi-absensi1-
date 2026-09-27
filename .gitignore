@@ -1,0 +1,114 @@
+# Environment
+.env
+.env.local
+.env.*.local
+.env.backup
+.env.bak
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.sublime-workspace
+*.sublime-project
+.DS_Store
+Thumbs.db
+
+# Dependencies
+/node_modules
+/vendor
+composer.lock
+package-lock.json
+yarn.lock
+
+# Laravel
+/bootstrap/cache/*
+/bootstrap/cache/.gitkeep
+/storage/*
+!/storage/app
+/storage/app/*
+!/storage/app/public
+/storage/app/public/*
+!/storage/framework
+/storage/framework/*
+!/storage/framework/cache
+/storage/framework/cache/.gitkeep
+!/storage/framework/sessions
+/storage/framework/sessions/.gitkeep
+!/storage/framework/views
+/storage/framework/views/.gitkeep
+!/storage/logs
+/storage/logs/*
+
+# Logs
+/storage/logs/*
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# Cache
+.phpunit.cache/
+
+# Testing
+.phpunit.result.cache
+
+# Database
+database.sqlite
+database.sqlite-journal
+
+# Build files
+dist/
+/public/mix-manifest.json
+/public/css/
+/public/js/
+/public/hot
+/public/storage
+
+# OS files
+.DS_Store
+Thumbs.db
+.directory
+
+# NPM & Yarn
+node_modules/
+.npm
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Misc
+*.pem
+*.key
+*.crt
+.env.example.local
+config/database.php
+
+# User-specific files
+*.suo
+*.user
+.classpath
+.c9/
+*.iml
+*.iws
+*.xml
+
+# IDE specific
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+
+# Local development
+local/
+debug/
+
+# Session WhatsApp
+/node-service/auth/
+/node-service/auth.*
+
+# Cursor dev scripts
+storage/framework/strip-cursor-coauthor.ps1
